@@ -2,6 +2,7 @@ const express = require("express")
 const app = express();
 //Request : To access API
 const request = require("request");
+require("dotenv/config");
 
 //Default engine was specified 
 app.use(express.static("views"));
@@ -16,9 +17,10 @@ app.get("/",(req,res)=>{
 });
 
 //API to Our Server
+var appID = process.env.access_key;
 app.get("/:id",(req,res)=>{
     var id = req.query.city;
-    var API = "https://api.openweathermap.org/data/2.5/weather?q="+id+"&appid=ced0a16bd2612e8defae094f108cb699&units=metric";
+    var API = "https://api.openweathermap.org/data/2.5/weather?q="+id+"&appid="+appID+"&units=metric";
     request(API,(err,response,data)=>{
         if(err){
             console.log("Error with API");
@@ -30,7 +32,7 @@ app.get("/:id",(req,res)=>{
 
 //API URL
 app.get("/view/url",(req,res)=>{
-    var API = "https://api.openweathermap.org/data/2.5/weather?q=thanjavur&appid=ced0a16bd2612e8defae094f108cb699&units=metric";
+    var API = "https://api.openweathermap.org/data/2.5/weather?q=thanjavur&appid="+appID+"&units=metric";
     request(API,(err,response,data)=>{
         if(err){
             console.log("Error with API");

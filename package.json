@@ -9,11 +9,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
+    "env": "^0.0.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "request": "^2.88.2"
   },
-  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtcelvam/Weather_App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gtcelvam/Weather_App/issues"
+  },
+  "homepage": "https://github.com/gtcelvam/Weather_App#readme",
   "description": ""
 }
