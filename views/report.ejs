@@ -1,0 +1,13 @@
+<%- include ("Partials/header.ejs") %> 
+<body>
+    <div class="container">
+        <h1>Weather Report for : <%= weather.name %> </h1>
+        <p>Temprature Today : <%= weather.main.temp %>c</p>
+        <p>Sunrise : 
+            <% var sunrise = new Date(weather.sys.sunrise)%> 
+            <%= sunrise %></p>
+        <p>Sunset : <% var sunset = new Date(weather.sys.sunrise)%> 
+            <%= sunset %></p>
+        <p>Humidity : <%= weather.main.humidity %></p>
+    </div>
+    <%- include ("Partials/footer.ejs") %> 

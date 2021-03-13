@@ -1,0 +1,13 @@
+<%- include ("Partials/header.ejs") %>
+    <body>
+        <div class="container d-flex flex-direction-column align-items-center">
+            <h1>Search for Weather Report Here</h1>
+            <form action="/id" method="GET">
+                <div class="form-group">
+                    <label for="input">Enter the City Name</label>
+                    <input type="text" name="city" id="input" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">search</button>
+            </form>
+        </div>
+        <%- include ("Partials/footer.ejs") %>
