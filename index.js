@@ -5,19 +5,22 @@ const request = require("request");
 require("dotenv/config");
 
 //Default engine was specified 
-app.use(express.static("views"));
+app.use(express.static("public"));
 //Extension was provided.
 app.set("view engine","ejs");
 //JSON File Reader
-app.use(express.json())
+app.use(express.json());
 
 
 app.get("/",(req,res)=>{
     res.render("home");
 });
 
+//dotenv file
+const appID = process.env.access_key
+
+
 //API to Our Server
-var appID = process.env.access_key;
 app.get("/:id",(req,res)=>{
     var id = req.query.city;
     var API = "https://api.openweathermap.org/data/2.5/weather?q="+id+"&appid="+appID+"&units=metric";
