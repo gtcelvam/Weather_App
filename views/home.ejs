@@ -1,13 +1,15 @@
 <%- include ("Partials/header.ejs") %>
     <body>
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center justify-content-center border-primary">
             <h1 class="text-primary">Search for Weather Report Here <span><i class="fa fa-cloud" aria-hidden="true"></i></span></h1>
             <form action="/id" method="GET">
-                <div class="form-group d-flex">
+                <div class="form-group d-flex flex-column align-items-center justify-content-center">
                     <label for="input">Enter the City Name</label>
                     <input type="text" name="city" id="input" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-danger">search <i class="fa fa-bolt" aria-hidden="true"></i></button>
+                <div class="btn-group d-flex flex-column">
+                    <button type="submit" class="btn btn-danger font-weight-bold">SEARCH <i class="fa fa-bolt" aria-hidden="true"></i></button>
+                </div>
             </form>
         </div>
         <%- include ("Partials/footer.ejs") %>
