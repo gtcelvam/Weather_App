@@ -1,13 +1,25 @@
-<%- include ("Partials/header.ejs") %> 
-<body>
-    <div class="container">
-        <h1>Weather Report for : <%= weather.name %> </h1>
-        <p>Temprature Today : <%= weather.main.temp %>c</p>
-        <p>Sunrise : 
-            <% var sunrise = new Date(weather.sys.sunrise)%> 
-            <%= sunrise %></p>
-        <p>Sunset : <% var sunset = new Date(weather.sys.sunrise)%> 
-            <%= sunset %></p>
-        <p>Humidity : <%= weather.main.humidity %></p>
-    </div>
-    <%- include ("Partials/footer.ejs") %> 
+<%- include ("Partials/header.ejs") %>
+
+    <body>
+        <div class="container border border-primary">
+                <h1 class="font-italic text-center">Weather Report for : <%= weather.name %>
+                </h1>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header  bg-primary text-center text-white">
+                      Report
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><span class="font-weight-bold">Temprature Today : </span><%= weather.main.temp %>c</li>
+                      <li class="list-group-item"><span class="font-weight-bold">Sunrise : </span><% var sunrise=new Date(weather.sys.sunrise)%>
+                        <% var date=sunrise.getDate()+ "/" + parseInt(sunrise.getMonth())+1 + "/" +
+                            sunrise.getFullYear()+" " +sunrise.getHours() + " :" + sunrise.getMinutes()%>
+                            <%= date %></li>
+                      <li class="list-group-item"><span class="font-weight-bold">Sunset : </span><% var sunset=new Date(weather.sys.sunset)%>
+                        <% var date2=sunset.getDate()+ "/" + parseInt(sunset.getMonth())+1 + "/" +
+                            sunset.getFullYear()+" " +sunset.getHours() + " :" + sunset.getMinutes()%> %>
+                            <%= date2 %></li>
+                      <li class="list-group-item"><span class="font-weight-bold">Humidity : </span><%= weather.main.humidity %></li>
+                    </ul>
+                  </div>
+        </div>
+        <%- include ("Partials/footer.ejs") %>
