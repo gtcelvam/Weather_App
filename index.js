@@ -4,10 +4,10 @@ const app = express();
 const request = require("request");
 require("dotenv/config");
 
-//Default engine was specified 
-app.use(express.static(__dirname + '/public'));
 //Extension was provided.
 app.set("view engine","ejs");
+//Default engine was specified 
+app.use("/public",express.static(__dirname + '/public'));
 //JSON File Reader
 app.use(express.json());
 
