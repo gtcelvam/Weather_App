@@ -4,7 +4,8 @@
         <div class="container border border-primary">
                 <h1 class="font-italic text-center head">Weather Report for : <%= weather.name %>
                 </h1>
-                <div class="card mb-5" style="width: 18rem;">
+                <div class="box-center">
+                  <div class="card mb-5" style="width: 18rem;">
                     <div class="card-header  bg-primary text-center text-white">
                       Report
                     </div>
@@ -14,12 +15,13 @@
                         <% var date=sunrise.getDate()+ "/" + parseInt(sunrise.getMonth())+1 + "/" +
                             sunrise.getFullYear()+" " +sunrise.getHours() + " :" + sunrise.getMinutes()%>
                             <%= date %></li>
-                      <li class="list-group-item"><span class="font-weight-bold">Sunset : </span><% var sunset=new Date(weather.sys.sunset)%>
-                        <% var date2=sunset.getDate()+ "/" + parseInt(sunset.getMonth())+1 + "/" +
+                            <li class="list-group-item"><span class="font-weight-bold">Sunset : </span><% var sunset=new Date(weather.sys.sunset)%>
+                              <% var date2=sunset.getDate()+ "/" + parseInt(sunset.getMonth())+1 + "/" +
                             sunset.getFullYear()+" " +sunset.getHours() + " :" + sunset.getMinutes()%> %>
                             <%= date2 %></li>
-                      <li class="list-group-item"><span class="font-weight-bold">Humidity : </span><%= weather.main.humidity %></li>
-                    </ul>
+                            <li class="list-group-item"><span class="font-weight-bold">Humidity : </span><%= weather.main.humidity %></li>
+                          </ul>
+                        </div>
+                      </div>
                   </div>
-        </div>
-        <%- include ("Partials/footer.ejs") %>
+                      <%- include ("Partials/footer.ejs") %>
